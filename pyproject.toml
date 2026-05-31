@@ -1,0 +1,53 @@
+[project]
+name = "pacmanranker"
+version = "0.1.0"
+description = "Arch Linux & Chaotic-AUR mirror ranking and validation CLI"
+authors = [
+    { name = "Pakrohk", email = "rhpcir@gmail.com" }
+]
+dependencies = [
+    "aiohttp>=3.13.5",
+    "rich>=15.0.0",
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Intended Audience :: System Administrators",
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[[tool.rye.sources]]
+name = "runflare"
+url = "https://mirror-pypi.runflare.com/simple/"
+
+[[tool.rye.sources]]
+name = "pypi"
+url = "https://pypi.org/simple/"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pacmanranker"]
+
+[project.scripts]
+pacmanranker = "pacmanranker.cli:main"
