@@ -46,11 +46,12 @@ PacmanRanker can be run easily via Rye.
 **Benchmark standard Arch Linux mirrors:**
 ```bash
 rye run pacmanranker
-
+```
 **Benchmark Chaotic-AUR mirrors:**
 Use the `--chaotic` flag to switch the target mirror list.
-bash
+```bash
 rye run pacmanranker --chaotic
+```
 
 ## 🤝 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
